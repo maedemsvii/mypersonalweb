@@ -25,7 +25,7 @@ body {
     color: var(--text-dark);
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
-    direction: ltr; /* Changed to left-to-right for English */
+    direction: ltr;
     overflow-x: hidden;
 }
 
@@ -33,17 +33,22 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    display: block;
+    visibility: visible;
+    opacity: 1;
+    min-height: 400px; /* برای اطمینان از داشتن فضا */
 }
 
 /* Header Section */
 .hero {
-    min-height: 100vh;
+    min-height: 80vh; /* کاهش ارتفاع برای دسترسی بهتر به about */
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    margin-top: 10px;
 }
 
 .hero::before {
@@ -89,6 +94,7 @@ body {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
     color: white;
+    margin-top: 20px;
     margin-bottom: 20px;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     line-height: 1.2;
@@ -355,6 +361,17 @@ section {
 /* About Section */
 .about-section {
     background: var(--bg-light);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: var(--transition);
+    min-height: 500px;
+    display: block;
+    visibility: visible;
+}
+
+.about-section.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .about-content {
@@ -463,6 +480,7 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
+/* Footer Social */
 .footer-social {
     display: flex;
 }
