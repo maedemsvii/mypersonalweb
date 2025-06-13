@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
@@ -259,7 +260,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Phone</h4>
-                            <p>+98 919 649 3774</p>
+                            <p>+98 919 649 </p>
                         </div>
                     </div>
 
@@ -280,6 +281,25 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <!-- Footer Animation Section -->
+            <div class="footer-animation">
+                <div class="laptop">
+                    <div class="screen">
+                        <div class="code-text">
+                            <code>Maede Mousavi - Programmer</code><span class="cursor"></span>
+                        </div>
+                    </div>
+                    <div class="keyboard"></div>
+                </div>
+                <div class="binary-bg">
+                    <span style="left: 10%; animation-delay: 0s;">0101010101</span>
+                    <span style="left: 20%; animation-delay: 2s;">1010101010</span>
+                    <span style="left: 30%; animation-delay: 4s;">0101010101</span>
+                    <span style="left: 40%; animation-delay: 6s;">1010101010</span>
+                    <span style="left: 50%; animation-delay: 1s;">0101010101</span>
+                </div>
+            </div>
+
             <div class="footer-content">
                 <div class="footer-info">
                     <h3 class="footer-title">Maede Mousavi</h3>
@@ -392,15 +412,15 @@
 
         // Intersection Observer for Animations
         const observerOptions = {
-            threshold: 0, // فعال شدن با ورود حتی بخش کوچکی از عنصر
-            rootMargin: '0px 0px 0px 0px' // حذف حاشیه منفی
+            threshold: 0,
+            rootMargin: '0px 0px 0px 0px'
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
-                    observer.unobserve(entry.target); // جلوگیری از تکرار
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
