@@ -285,6 +285,11 @@ body {
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
     transform: translateY(-2px);
 }
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+}
 
 .mobile-menu-btn {
     display: none;
